@@ -1,0 +1,31 @@
+meshtastic_dopewars
+===================
+
+A dopewars client that sends and receives messages to players via meshtastic.
+
+How to run
+----------
+
+python3 -m venv env
+./env/bin/pip install -r requirements.txt
+./env/bin/python game_server.py
+
+
+Options
+-------
+--device-connect-string DEVICE_CONNECT_STRING
+Selects the meshtastic device to use, examples:
+    tcp://192.168.10.1
+    serial:///dev/ttyACM0
+    bt://__first__
+    bt://dope_0060
+
+--dopewars-server DOPEWARS_SERVER
+    dopewars game server to connect to
+
+
+Knnown problem
+--------------
+There is missing input validation when buying and selling. If you have
+indifferent funds or quantity it will not advance the server's state machine
+and no output will be sent to the player.
